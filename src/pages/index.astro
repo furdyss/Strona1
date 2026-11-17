@@ -164,12 +164,14 @@ const schema = {
 </html>
 
 <style is:global>
+  p, dd, li, summary, figcaption { text-wrap: pretty; }
+  h1, h2, h3, dt { text-wrap: balance; }
   :root {
     --yellow: #FFD21F;
     --yellow-deep: #F2BE00;
     --ink: #1B1A16;
     --ink-soft: #4A4636;
-    --paper: #FFFDF5;
+    --paper: #FFFFFF;
     --signal: #D7261E;
     --font: 'Archivo Variable', 'Helvetica Neue', sans-serif;
     --pad: clamp(1rem, 5vw, 4rem);
@@ -194,8 +196,7 @@ const schema = {
 
   .hero { background: var(--yellow); padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(2.5rem, 6vw, 4.5rem); }
   .now { display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; margin-bottom: 2rem; }
-  .dot { width: .65rem; height: .65rem; border-radius: 50%; background: var(--signal); animation: pulse 2.4s cubic-bezier(.16, 1, .3, 1) infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(215, 38, 30, .55); } 100% { box-shadow: 0 0 0 .7rem rgba(215, 38, 30, 0); } }
+  .dot { width: .65rem; height: .65rem; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 3px rgba(215, 38, 30, .2); }
   .hero h1 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 700; max-width: 24ch; }
   .number {
     display: inline-block; margin: 1.25rem 0 1.5rem;
@@ -216,7 +217,7 @@ const schema = {
   .services-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 50%; border-radius: 4px; }
   .services h2 { margin-bottom: 2rem; }
   .services dl { margin: 0; }
-  .services dl > div { padding: 1.25rem 0; border-top: 1px solid #E2DCC4; }
+  .services dl > div { padding: 1.25rem 0; border-top: 1px solid #E4E2DA; }
   .services dt { font-weight: 700; font-size: 1.3rem; font-variation-settings: 'wdth' 112; margin-bottom: .3rem; }
   .services dd { margin: 0; color: var(--ink-soft); max-width: 56ch; }
 
@@ -238,8 +239,8 @@ const schema = {
   .area-note { margin-top: 2.5rem; font-weight: 600; }
 
   .faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 3rem; padding: clamp(3.5rem, 8vw, 7rem) var(--pad); }
-  .faq details { border-top: 1px solid #E2DCC4; }
-  .faq details:last-child { border-bottom: 1px solid #E2DCC4; }
+  .faq details { border-top: 1px solid #E4E2DA; }
+  .faq details:last-child { border-bottom: 1px solid #E4E2DA; }
   .faq summary { cursor: pointer; list-style: none; padding: 1.1rem 2.5rem 1.1rem 0; position: relative; font-weight: 700; font-size: 1.15rem; }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after { content: ''; position: absolute; right: .4rem; top: 50%; width: .7rem; height: .7rem; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: translateY(-70%) rotate(45deg); transition: transform .25s cubic-bezier(.16, 1, .3, 1); }
@@ -268,5 +269,5 @@ const schema = {
     .dock { display: block; }
     .foot { padding-bottom: 6rem; }
   }
-  @media (prefers-reduced-motion: reduce) { .dot { animation: none; } .faq summary::after { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
 </style>
